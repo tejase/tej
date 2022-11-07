@@ -1,0 +1,16 @@
+%{
+#include<stdio.h>
+int count;
+%}
+
+%%
+[0-9]+e[0-9]+ {printf("Valid acc to naman");}
+%%
+
+int yywrap(void){}
+
+int main() {
+        yyin = fopen("inpute.txt","r");
+        yylex();
+        printf("%d",count);
+}
